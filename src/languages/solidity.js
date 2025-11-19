@@ -209,8 +209,10 @@ function hljsDefineSolidity(hljs) {
 
     return {
         aliases: ['sol'],
-        keywords: SOL_KEYWORDS,
-        lexemes: SOL_LEXEMES_RE,
+        keywords: {
+            ...SOL_KEYWORDS,
+            $pattern: SOL_LEXEMES_RE
+        },
         contains: [
             // basic literal definitions
             SOL_APOS_STRING_MODE,
